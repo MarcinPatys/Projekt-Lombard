@@ -1,0 +1,49 @@
+﻿<Window x:Class="ProjektLombardWPF_3.modification"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ProjektLombardWPF_3"
+        mc:Ignorable="d"
+        Title="modification" Height="550" Width="300">
+
+    <StackPanel Orientation="Vertical" Margin="0,0,0,-51">
+        <Label>Imie:</Label>
+        <TextBox Width="120" Height="20" Margin="-10,-20,0,10" x:Name="Name_txt"/>
+        <Label>Nazwisko:</Label>
+        <TextBox Width="120" Height="20" Margin="-10,-20,0,10" x:Name="Surname_txt"/>
+        <Label>Tel:</Label>
+        <TextBox  Width="120" Height="20" Margin="-10,-20,0,10" x:Name="phone"  />
+        <Label>Prawo jazdy:</Label>
+        <Grid  Width="120">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="30"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="40"/>
+                <ColumnDefinition Width="40"/>
+                <ColumnDefinition Width="40"/>
+            </Grid.ColumnDefinitions>
+            <CheckBox x:Name="A1" Content="A1" Grid.Row="0" Grid.Column="0"></CheckBox>
+            <CheckBox x:Name="A2" Content="A2" Grid.Row="0" Grid.Column="1"></CheckBox>
+            <CheckBox x:Name="A" Content="A" Grid.Row="0" Grid.Column="2"></CheckBox>
+            <CheckBox x:Name="B" Content="B" Grid.Row="1" Grid.Column="0"></CheckBox>
+            <CheckBox x:Name="C" Content="C" Grid.Row="1" Grid.Column="1"></CheckBox>
+            <CheckBox x:Name="CE" Content="C+E" Grid.Row="1" Grid.Column="2"></CheckBox>
+            <CheckBox x:Name="D1" Content="D1" Grid.Row="2" Grid.Column="0"></CheckBox>
+            <CheckBox x:Name="B1" Content="B1" Grid.Row="2" Grid.Column="1"></CheckBox>
+            <CheckBox x:Name="T" Content="T" Grid.Row="2" Grid.Column="2"></CheckBox>
+        </Grid>
+
+        <StackPanel Orientation="Horizontal">
+            <Label>Płeć:</Label>
+            <RadioButton x:Name="Mezczynza" Margin="0,7,0,0" Content="Mężczyzna"/>
+            <RadioButton x:Name="Kobieta" Margin="10,7,0,0" Content="Kobieta"/>
+        </StackPanel>
+        <Label Margin="0,20">Dodatkowe informacje</Label>
+        <RichTextBox x:Name="RichTxt" Width="100" Height="130" Margin="90,-40,0,0"/>
+        <Button Width="60" Margin="0,20" Click="Button_Click">Zatwierdź</Button>
+    </StackPanel>
+</Window>

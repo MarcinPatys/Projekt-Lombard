@@ -1,0 +1,53 @@
+﻿<Window x:Class="ProjektLombardWPF_3.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ProjektLombardWPF_3"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="500" Width="800">
+    <Grid>
+        <TextBox x:Name="txtSearch"  Width="200" Height="20" Margin="0,0,0,260" TextChanged="TextBox_TextChanged"></TextBox>
+        <StackPanel >
+            <Menu>
+                <MenuItem Header="Dodaj" Click="btn_Add_Click"></MenuItem>
+                <MenuItem Header="Usuń" Click="btn_modify_Click"></MenuItem>
+                
+            </Menu>
+            <DataGrid x:Name="dataGrid1" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="100"  Width="500px" Height="200" Background="LightGray" SelectionMode="Single" SelectionChanged="dataGrid1_SelectionChanged">
+                <DataGrid.Resources>
+
+                    <Style TargetType="{x:Type DataGridColumnHeader}">
+                        <Setter Property="Background" Value="DarkGray"/>
+                        <Setter Property="FontWeight" Value="Bold"/>
+                        <Setter Property="BorderBrush" Value="Black"/>
+                        <Setter Property="BorderThickness" Value="0,0,1,2"/>
+                    </Style>
+
+                </DataGrid.Resources>
+
+                <DataGrid.Columns>
+
+                    <DataGridTextColumn Header="ID" Binding="{Binding id}" Width="50"/>
+                    <DataGridTextColumn Header="Imię" Binding="{Binding imie}" Width="150"/>
+                    <DataGridTextColumn Header="Nazwisko" Binding="{Binding nazwisko}" Width="150"/>
+                    <DataGridTextColumn Header="Numer telefonu" Binding="{Binding PhoneNumber}" Width="150"/>
+
+                </DataGrid.Columns>
+                <DataGrid.ContextMenu>
+                    <ContextMenu>
+                            <MenuItem Header="Dodaj" Click="btn_Add_Click"/>
+                            <MenuItem Header="Usuń" Click="btn_delate_Click"/>
+                            <Separator />
+                            <MenuItem Header="Modyfikuj" Click="btn_modify_Click"/>
+                    </ContextMenu>
+                </DataGrid.ContextMenu>
+            </DataGrid>
+            <Button x:Name="btn_Add" Width="60" Height="20" Margin="0,-180,290,0" Click="btn_Add_Click">Dodaj</Button>
+            <Button x:Name="btn_previous" Width="50" Height="20" Margin="-50,-180,0,0" Click="btn_previous_Click">&lt;</Button>
+            <Button x:Name="btn_next" Width="50" Height="20" Margin="51,-180,0,0" Click="btn_next_Click">&gt;</Button>
+            <Button x:Name="btn_delate" Width="60" Height="20" Margin="0,-140,290,0" Click="btn_delate_Click">Usuń</Button>
+            <Button x:Name="btn_modify" Width="60" Height="20" Margin="0,-100,290,0" Click="btn_modify_Click" >Modyfikuj</Button>
+        </StackPanel>
+    </Grid>
+</Window>
